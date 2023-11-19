@@ -1,0 +1,6 @@
+touch first_rx_poc.log
+echo -e "year\tmonth\tday\thour\tobs_tmp\tfc_temp">first_rx_poc.log
+column -t -s $'\t' first_rx_poc.log > rx_poc.log
+
+
+
