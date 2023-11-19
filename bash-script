@@ -1,0 +1,18 @@
+#! /bin/bash
+weather_report=raw_data_$(date +%Y%m%d)
+city=Casablanca
+curl wttr.in/$city?format="%t\n%f\n" --output $weather_report
+grep °C $weather_report > temperatures.txt
+# extract the current temperature
+obs_temp=$(head -1 $weather_report)
+echo "Current Temperature: $obs_temp"
+# extract the feels like temp
+fl_temp=$(head -2 $weather_report | tail -1) #| grep -oE '[-+]?[0-9]+' | head -1)
+echo "Feels Like Temp: $fl_temp"
+hour=$(TZ='Africa/Casablanca' date +%H) 
+day=$(TZ='Africa/Casablanca' date +%d) 
+month=$(TZ='Africa/Casablanca' date +%m)
+year=$(TZ='Africa/Casablanca' date +%Y)
+record=$(echo -e "$year\t$month\t$day\t$hour\t$obs_temp\t$fl_temp")
+echo $record>>rx_poc.log
+column -t rx_poc.log > temp_rx_poc.log && mv temp_rx_poc.log rx_poc.log
