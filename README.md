@@ -1,7 +1,7 @@
 # wttr.in-bash-example
 Simple Bash Use example 
 
-Code allows to take a data about actual temperature and actual-feelslike temperature and save it in log table. 
+Code allows to take a data with actual temperature and actual-feelslike temperature and save it in log table. 
 Code will be extensive with forecasting and automatic check using Cron. 
 
 Output of actual version of code: 
