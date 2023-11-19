@@ -6,12 +6,12 @@ Code will be extensive with forecasting and automatic check using Cron.
 
 Output of actual version of code: 
 
-$bash rx_poc.sh
+$bash rx_poc.sh  
 
-Current Temperature: +20°C
+Current Temperature: +20°C  
 Feels Like Temp: +20°C
 
-$ cat rx_poc.log
-year  month  day  hour  obs_tmp  fl_temp
+$cat rx_poc.log   
+year  month  day  hour  obs_tmp  fl_temp  
 2023  11     19   20    +20°C    +20°C
 
